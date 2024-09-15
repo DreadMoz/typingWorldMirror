@@ -9762,7 +9762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 644289660}
-  offsetX: 60
+  offsetX: 70
 --- !u!1001 &1048905391
 PrefabInstance:
   m_ObjectHideFlags: 0
