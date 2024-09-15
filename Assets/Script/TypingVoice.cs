@@ -15,7 +15,9 @@ public class TypingVoice : MonoBehaviour
 
     void Start()
     {
+        int mute = gm.savedata.Settings[se.Mute];
         initVolume();
+//        gm.savedata.Settings[se.Mute] = mute;
         dispMute();
     }
 
@@ -24,45 +26,35 @@ public class TypingVoice : MonoBehaviour
         // ミュート状態を切り替える
         gm.savedata.Settings[se.Mute] = 1 - gm.savedata.Settings[se.Mute];
         dispMute();
-        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);    // EventSystemのフォーカスをクリア
     }
 
     private void dispMute()
     {
         // アイコンの更新
-        if (gm.savedata.Settings[se.Mute] == 0)
+        if (gm.savedata.Settings[se.Mute] == 0) // ミュートでなければ
         {
-            muteIcon.sprite = voiceSprite;
-            nya.volume = (float)gm.savedata.Settings[se.Volume] * 0.01f;
+            nya.mute = false;             // ミュート解除
+            muteIcon.sprite = voiceSprite;      // 口アイコン設定
             slider.fillRect.GetComponent<Image>().color = new Color(0.502848f, 0.7884344f, 0.9433962f, 1);
         }
         else
         {
-            muteIcon.sprite = muteSprite;
-            nya.volume = 0;
+            nya.mute = true;             // ミュート
+            muteIcon.sprite = muteSprite;       // マスクアイコン設定
             slider.fillRect.GetComponent<Image>().color = new Color(0.7075472f, 0.5416017f, 0.4438857f, 1);
         }
-    }
-    public void updateVolume()
-    {
-        gm.savedata.Settings[se.Mute] = 0;
-        muteIcon.sprite = voiceSprite;
-        gm.savedata.Settings[se.Volume] = (int)slider.value;
-        nya.volume = (float)gm.savedata.Settings[se.Volume] * 0.01f;
-        slider.fillRect.GetComponent<Image>().color = new Color(0.502848f, 0.7884344f, 0.9433962f, 1);
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);    // EventSystemのフォーカスをクリア
+    }
+    public void updateVolume()      // ボリューム変更時
+    {
+        gm.savedata.Settings[se.Mute] = 0;      // ミュート解除
+        gm.savedata.Settings[se.Volume] = (int)slider.value;    // スライダー値をセーブデータに代入
+        nya.volume = slider.value * 0.01f;    // スライダー値をボリュームに
+        nya.mute = false;             // ミュート解除
+        dispMute();
     }
     public void initVolume()
     {
         slider.value = gm.savedata.Settings[se.Volume];
-        if (gm.savedata.Settings[se.Mute] == 1)
-        {
-            nya.volume = 0.0f;
-        }
-        else
-        {
-            nya.volume = (float)gm.savedata.Settings[se.Volume] * 0.01f;
-        }
     }
-
 }
