@@ -54,13 +54,13 @@ public class TypingVoice : MonoBehaviour
     }
     public void initVolume()
     {
+        slider.value = gm.savedata.Settings[se.Volume];
         if (gm.savedata.Settings[se.Mute] == 1)
         {
             nya.volume = 0.0f;
         }
         else
         {
-            slider.value = gm.savedata.Settings[se.Volume];
             nya.volume = (float)gm.savedata.Settings[se.Volume] * 0.01f;
         }
     }
