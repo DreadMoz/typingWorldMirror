@@ -684,6 +684,7 @@ public class GameManager : MonoBehaviour
 
     public void setVolume()
     {
+        /* これが大元のボリュームか。タイピング以外は今はせってなしに
         float systemVolume;
 
         if (savedata.Settings[se.Mute] == 0)
@@ -695,6 +696,7 @@ public class GameManager : MonoBehaviour
             systemVolume = 0;
         }
         AudioListener.volume = systemVolume / 100f;
+        */
     }
 
     public void returnGemini(string response)

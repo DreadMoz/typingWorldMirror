@@ -114,5 +114,7 @@ public class Capital : MonoBehaviour
             keym.text = "m";
         }
         gm.savedata.Settings[se.Capital] = (int)slider.value;
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);    // EventSystemのフォーカスをクリア
+
     }
 }

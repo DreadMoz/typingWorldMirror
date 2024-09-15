@@ -17,7 +17,7 @@ public class TypingVoice : MonoBehaviour
     {
         int mute = gm.savedata.Settings[se.Mute];
         initVolume();
-//        gm.savedata.Settings[se.Mute] = mute;
+        gm.savedata.Settings[se.Mute] = mute;
         dispMute();
     }
 
