@@ -102,6 +102,9 @@ public class TitleSky : MonoBehaviour
         skyboxMaterial.SetFloat("_Rotation", 330f);
         animator = player.GetComponent<Animator>(); // Playerのアニメーターを取得
 
+        
+#if !UNITY_EDITOR
+
         if (GameManager.SceneNo == scene.Night)
         {
             startButton.SetActive(false);
@@ -109,9 +112,10 @@ public class TitleSky : MonoBehaviour
             message.SetActive(true);
             Text messageText = message.GetComponentInChildren<Text>();
             messageText.text = "ねこは寝ています。";
-            cat.setEmo(27);
+            cat.setEmo(27);                 // 寝顔
             return;
         }
+#endif
 
         TMP_Text buttonText = startButton.GetComponentInChildren<TMP_Text>();
         buttonText.text = "ログイン";

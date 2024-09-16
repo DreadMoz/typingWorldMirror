@@ -111,7 +111,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-//#if !UNITY_EDITOR
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+#if !UNITY_EDITOR
         // 現在の時刻を取得
         int currentHour = System.DateTime.Now.Hour;
 
@@ -119,13 +122,13 @@ public class GameManager : MonoBehaviour
         if (currentHour < openHour || currentHour >= closeHour)
         {
             GameManager.SceneNo = scene.Night;
-            SceneManager.LoadScene("TitleScene"); // タイトルシーンに遷移
+            if (sceneName != "TitleScene")
+            {
+                SceneManager.LoadScene("TitleScene"); // タイトルシーンに遷移
+            }
             return;
         }
-//#endif
-
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
+#endif
 
         if (sceneName == "TitleScene")
         {

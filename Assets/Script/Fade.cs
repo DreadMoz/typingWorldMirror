@@ -136,7 +136,8 @@ public class Fade : MonoBehaviour
         timer = 0.0f;
         fadeOut = false;
         compFadeOut = true;
-//#if !UNITY_EDITOR
+        
+#if !UNITY_EDITOR
         // 現在の時刻を取得
         int currentHour = System.DateTime.Now.Hour;
 
@@ -147,6 +148,6 @@ public class Fade : MonoBehaviour
             SceneManager.LoadScene("TitleScene"); // タイトルシーンに遷移
             return;
         }
-//#endif
+#endif
     }
 }
