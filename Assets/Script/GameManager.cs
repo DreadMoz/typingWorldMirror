@@ -17,6 +17,7 @@ public class scene
     public const int World = 1;
     public const int Typing = 2;
     public const int House = 3;
+    public const int Night = 4;
 }
 
 public class GameManager : MonoBehaviour
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
     static public int MaxCombo { get; set; }
     public static List<string> MistypedSentences { get; set; } = new List<string>();
     public static string geminiResponce { get; set; }
+    public static int openHour = 6;            // 開店時間
+    public static int closeHour = 21;          // 閉店時間
 
     [SerializeField] private float kpmRatio = 0.5f;
 
@@ -108,6 +111,19 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+//#if !UNITY_EDITOR
+        // 現在の時刻を取得
+        int currentHour = System.DateTime.Now.Hour;
+
+        // 許可された時間範囲内かどうかをチェック
+        if (currentHour < openHour || currentHour >= closeHour)
+        {
+            GameManager.SceneNo = scene.Night;
+            SceneManager.LoadScene("TitleScene"); // タイトルシーンに遷移
+            return;
+        }
+//#endif
+
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 

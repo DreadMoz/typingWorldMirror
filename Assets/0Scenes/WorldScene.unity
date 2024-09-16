@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.406
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.053020768, g: 0.08189855, b: 0.1466627, a: 0.406}
+  m_IndirectSpecularColor: {r: 0.04233028, g: 0.06375612, b: 0.11266755, a: 0.406}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -195,6 +195,7 @@ MonoBehaviour:
   statusui: {fileID: 1979795457}
   windowOpenCount: 20
   talk: {fileID: 1732579529}
+  startTime: 6
 --- !u!114 &1403481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,11 +610,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1221083948262841476, guid: c3c76a247c7e43b19a40ebfcfefa8f19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 222.9
+      value: 219.18
       objectReference: {fileID: 0}
     - target: {fileID: 1221083948262841476, guid: c3c76a247c7e43b19a40ebfcfefa8f19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 222.6
+      value: 222.83
       objectReference: {fileID: 0}
     - target: {fileID: 1221083948262841476, guid: c3c76a247c7e43b19a40ebfcfefa8f19, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1015,6 +1016,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11596648033829693, guid: bec90c07eadeb4b3dbeb946670b6fec0, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 392569855949669136, guid: bec90c07eadeb4b3dbeb946670b6fec0, type: 3}
       propertyPath: m_Name
       value: LittleCat
@@ -1037,7 +1042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1024956598970767786, guid: bec90c07eadeb4b3dbeb946670b6fec0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 221.25
+      value: 216.38
       objectReference: {fileID: 0}
     - target: {fileID: 1024956598970767786, guid: bec90c07eadeb4b3dbeb946670b6fec0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1078,6 +1083,10 @@ PrefabInstance:
     - target: {fileID: 1024956598970767786, guid: bec90c07eadeb4b3dbeb946670b6fec0, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353778280246375493, guid: bec90c07eadeb4b3dbeb946670b6fec0, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bec90c07eadeb4b3dbeb946670b6fec0, type: 3}
@@ -9763,6 +9772,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 644289660}
   offsetX: 70
+--- !u!136 &1046897621
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046897614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.53
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.46, z: 0}
 --- !u!1001 &1048905391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13644,6 +13667,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 644289660}
   offsetX: 50
+--- !u!136 &1682444397
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682444391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32
+  m_Height: 0.64
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.28, z: 0}
 --- !u!1001 &1695237786
 PrefabInstance:
   m_ObjectHideFlags: 0
