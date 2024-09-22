@@ -357,8 +357,7 @@ public class TypingSoft : MonoBehaviour
 
     private bool LoadThemes(string fileName)
     {
-        string typingDataName = fileName;
-        TextAsset textAsset = Resources.Load<TextAsset>(typingDataName);
+        TextAsset textAsset = Resources.Load<TextAsset>(fileName);
 
         try
         {
@@ -372,6 +371,7 @@ public class TypingSoft : MonoBehaviour
                 }
                 if ((fileName.StartsWith("TextC")) && (gm.savedata.Settings[se.MailChar] != 0))
                 {
+                    combineCentence();
                     mailReplaceNo = new System.Random().Next(0, theme.themes.Length);
                     theme.themes[mailReplaceNo].hiragana = gm.savedata.Email;
                     theme.themes[mailReplaceNo].kanji = "ボーナス！";
@@ -397,6 +397,39 @@ public class TypingSoft : MonoBehaviour
             Debug.Log("Exception occurred: " + ex.Message);
             return false;
         }
+    }
+
+    private void combineCentence()
+    {
+        if (theme.hide < 10)
+        {
+            return;
+        }
+        int finalLength = theme.themes.Length - theme.hide;
+
+        List<int> numbers = new List<int>();
+        for (int i = 0; i < finalLength; i++)
+        {
+            numbers.Add(i);
+        }
+        // リストの要素をシャッフル
+        for (int i = numbers.Count - 1; i > 0; i--)
+        {
+            int j = new System.Random().Next(0, i + 1);
+            int temp = numbers[i];
+            numbers[i] = numbers[j];
+            numbers[j] = temp;
+        }
+        for (int i = 0; i < theme.hide; i++)
+        {
+            if (theme.themes[theme.hide + numbers[i]] != null)
+            {
+                theme.themes[i].hiragana += theme.themes[theme.hide + numbers[i]].hiragana;
+                theme.themes[i].kanji += theme.themes[theme.hide + numbers[i]].kanji;
+            }
+        }
+        Array.Resize(ref theme.themes, theme.hide);
+        theme.hide = 0;
     }
 
     private void ShuffleThemes(int shuffle)

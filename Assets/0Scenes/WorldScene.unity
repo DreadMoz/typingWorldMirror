@@ -1041,7 +1041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1024956598970767786, guid: bec90c07eadeb4b3dbeb946670b6fec0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 216.38
+      value: 217.3
       objectReference: {fileID: 0}
     - target: {fileID: 1024956598970767786, guid: bec90c07eadeb4b3dbeb946670b6fec0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12027,7 +12027,9 @@ MonoBehaviour:
   trainingList: {fileID: 1807232287}
   challengeList: {fileID: 405163555}
   customList: {fileID: 308176998}
-  listParent: {fileID: 1295912849}
+  listParent1: {fileID: 1762935300}
+  listParent2: {fileID: 479599638}
+  listParent3: {fileID: 1295912849}
 --- !u!114 &1463253608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12933,7 +12935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7700812938084356392, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 254.6
+      value: 255.59
       objectReference: {fileID: 0}
     - target: {fileID: 7700812938084356392, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13665,7 +13667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 644289660}
-  offsetX: 50
+  offsetX: 54
 --- !u!136 &1682444397
 CapsuleCollider:
   m_ObjectHideFlags: 0
