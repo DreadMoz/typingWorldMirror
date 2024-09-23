@@ -12027,9 +12027,7 @@ MonoBehaviour:
   trainingList: {fileID: 1807232287}
   challengeList: {fileID: 405163555}
   customList: {fileID: 308176998}
-  listParent1: {fileID: 1762935300}
-  listParent2: {fileID: 479599638}
-  listParent3: {fileID: 1295912849}
+  listParent: {fileID: 1295912849}
 --- !u!114 &1463253608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21449,6 +21447,10 @@ PrefabInstance:
     - target: {fileID: 3001577747562269275, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_Constraints
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001577747562269275, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4565979561441694012, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_IsActive
