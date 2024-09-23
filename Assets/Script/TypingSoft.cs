@@ -1364,7 +1364,7 @@ public class TypingSoft : MonoBehaviour
     private void CompleteTask()
     {
         // タイプした文字を緑色に
-        UIR.text = $"<color=#20A01D>{UIR.text}</color>";
+//        UIR.text = $"<color=#20A01D>{UIR.text}</color>";
         answers++;
 
         if ((currentThemeIndex >= shuffledThemes.Count) && (theme.random == 0))     // 時間制じゃない時の終わり
@@ -1443,13 +1443,16 @@ public class TypingSoft : MonoBehaviour
     /// </summary>
     private void SetUITypeText(string sentence)
     {
-        if (gm.savedata.Settings[se.Capital] == 1)
+        if (theme.hide < 1)
         {
-            UIR.text = sentence.ToUpper().Replace(' ', '_');
-        }
-        else
-        {
-            UIR.text = sentence.Replace(' ', '_');
+            if (gm.savedata.Settings[se.Capital] == 1)
+            {
+                UIR.text = sentence.ToUpper().Replace(' ', '_');
+            }
+            else
+            {
+                UIR.text = sentence.Replace(' ', '_');
+            }
         }
     }
 
