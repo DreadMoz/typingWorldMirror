@@ -36,9 +36,9 @@ public class ShopList : MonoBehaviour
     private ScrollRect scrollRect;
     public int tabNo = 0;
     int[] rankScore = { 0, 40, 80, 120, 200, 263};
-    int[] openWeapon = { 3, 6, 9, 13, 17, 99};
-    int[] openGlasses = { 3, 5, 8, 9, 10, 99};
-    int[] openHat = { 3, 5, 6, 8, 9, 99};
+    int[] openWeapon = { 3, 6, 9, 13, 17, 20};
+    int[] openGlasses = { 3, 5, 8, 9, 10, 11};
+    int[] openHat = { 3, 5, 6, 8, 9, 10};
 
     // Start is called before the first frame update
     void Start()
