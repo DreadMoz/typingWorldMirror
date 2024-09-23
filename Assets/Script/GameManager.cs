@@ -108,7 +108,6 @@ public class GameManager : MonoBehaviour
     private int[] oldEquip;
     private int[] newEquip;
     private bool rankScroll = true;
-
     private void Awake()
     {
         Scene currentScene = SceneManager.GetActiveScene();

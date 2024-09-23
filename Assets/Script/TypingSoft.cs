@@ -484,6 +484,7 @@ public class TypingSoft : MonoBehaviour
         {
             seekerCombo++;
             coins.SpawnCoins(1, 1);    // コインアニメーション
+            typingVoice.sayCoin();
             updateSeeker();
             float comboScale = ((float)comboN / 50.0f + 4) / 5;
             UIcombo.rectTransform.localScale = new Vector3(comboScale, comboScale, comboScale);
@@ -502,6 +503,7 @@ public class TypingSoft : MonoBehaviour
             {
                 seekerBonus += 5;
                 coins.SpawnCoins(5, 0);    // コインアニメーション
+                typingVoice.sayCoin3();
                 updateSeeker();
             }
         }
@@ -516,6 +518,7 @@ public class TypingSoft : MonoBehaviour
                 {
                     seekerKey = 1;
                     coins.SpawnCoins(1, 2);    // コインアニメーション
+                    typingVoice.sayCoin();
                     updateSeeker();
                 }
                 break;
@@ -524,6 +527,7 @@ public class TypingSoft : MonoBehaviour
                 {
                     seekerKey = 2;
                     coins.SpawnCoins(1, 2);    // コインアニメーション
+                    typingVoice.sayCoin();
                     updateSeeker();
                 }
                 break;
@@ -532,6 +536,7 @@ public class TypingSoft : MonoBehaviour
                 {
                     seekerKey = 3;
                     coins.SpawnCoins(1, 2);    // コインアニメーション
+                    typingVoice.sayCoin();
                     updateSeeker();
                 }
                 break;
@@ -540,6 +545,7 @@ public class TypingSoft : MonoBehaviour
                 {
                     seekerKey = 4;
                     coins.SpawnCoins(1, 2);    // コインアニメーション
+                    typingVoice.sayCoin();
                     updateSeeker();
                 }
                 break;
@@ -548,6 +554,7 @@ public class TypingSoft : MonoBehaviour
                 {
                     seekerKey = 5;
                     coins.SpawnCoins(1, 2);    // コインアニメーション
+                    typingVoice.sayCoin();
                     updateSeeker();
                 }
                 break;
@@ -556,6 +563,7 @@ public class TypingSoft : MonoBehaviour
                 {
                     seekerKey = 6;
                     coins.SpawnCoins(1, 2);    // コインアニメーション
+                    typingVoice.sayCoin();
                     updateSeeker();
                 }
                 break;
@@ -573,6 +581,7 @@ public class TypingSoft : MonoBehaviour
             seekerTime = 2;
         }
         coins.SpawnCoins(seekerTime, 0);    // コインアニメーション
+        typingVoice.sayCoin();
         updateSeeker();
     }
 
@@ -931,12 +940,14 @@ public class TypingSoft : MonoBehaviour
                 break;
         }
 
+        typingVoice.sayDice();
         yield return new WaitUntil(() => diceAnim.GetCurrentAnimatorStateInfo(0).IsName(diceStates[diceNo-1]) &&
                                             diceAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
 
         
         if (diceNo == 6) {
             seekerBonus += 20;
+            typingVoice.sayCoin3();
             coins.SpawnCoins(10, 0);
             coins.SpawnCoins(5, 1);
             coins.SpawnCoins(5, 2);
@@ -944,6 +955,7 @@ public class TypingSoft : MonoBehaviour
             seekerBonus += diceNo * 2;
             coins.SpawnCoins(diceNo * 2, 0);
         }
+        typingVoice.sayCoin3();
         updateSeeker();
         gm.savedata.Settings[se.GachaCnt] = 1;
         spaceEnd = true;
@@ -1034,6 +1046,8 @@ public class TypingSoft : MonoBehaviour
             // アニメーションステートを設定
             animator.SetTrigger("Next");
 
+            typingVoice.sayDia(i);
+
             // アニメーションの完了を待つ
             yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Jump") &&
                                              animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
@@ -1043,6 +1057,8 @@ public class TypingSoft : MonoBehaviour
         {
             Animator animator = animators[i];
             string state = states[i];
+
+            typingVoice.sayDia(i+5);
 
             // アニメーションステートを設定
             animator.SetTrigger("Jump");
@@ -1064,6 +1080,10 @@ public class TypingSoft : MonoBehaviour
         dia5.SetActive(true);
         diaRank = new System.Random().Next(0, 5);
         StartCoroutine(PlayAnimationsInSequence());
+    }
+    public void testThrowOnly()
+    {
+        StartCoroutine(throwDise(3));
     }
     /// <summary>
     /// キーコードから string
@@ -1314,7 +1334,7 @@ public class TypingSoft : MonoBehaviour
 
         isRecMistype = false;
 
-        typingVoice.nya.Play();
+        typingVoice.sayNya();
         if (maxCombo < comboN)
         {
             maxCombo = comboN;
