@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;  // UIコンポーネントを扱うために必要
+using System.Collections;
 
 public class TypingVoice : MonoBehaviour
 {
@@ -10,11 +11,12 @@ public class TypingVoice : MonoBehaviour
     public Sprite muteSprite; // ミュートの画像
     public Slider slider;
     public AudioSource typingAudio;  // AudioSource コンポーネントへの参照
-    [SerializeField] private AudioClip nya;//AudioClip型の変数b1を宣言 使用するAudioClipをアタッチ必要
-    [SerializeField] private AudioClip[] dia;//AudioClip型の変数b2を宣言 使用するAudioClipをアタッチ必要 
-    [SerializeField] private AudioClip dice;//AudioClip型の変数b3を宣言 使用するAudioClipをアタッチ必要 
-    [SerializeField] private AudioClip coin;//AudioClip型の変数b3を宣言 使用するAudioClipをアタッチ必要 
-    [SerializeField] private AudioClip coin3;//AudioClip型の変数b3を宣言 使用するAudioClipをアタッチ必要 
+    [SerializeField] private AudioClip nya;
+    [SerializeField] private AudioClip[] dia;
+    [SerializeField] private AudioClip dice;
+    [SerializeField] private AudioClip coin;
+    [SerializeField] private AudioClip coin3;
+    [SerializeField] private AudioClip countDown;
 
     // Start is called before the first frame update
 
@@ -83,4 +85,9 @@ public class TypingVoice : MonoBehaviour
     {
         typingAudio.PlayOneShot(coin3);
     }
+    public void sayCountDown()
+    {
+        typingAudio.PlayOneShot(countDown);
+    }
+
 }

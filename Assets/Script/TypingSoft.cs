@@ -670,6 +670,7 @@ public class TypingSoft : MonoBehaviour
         var count = 3;
         while (count > 0)
         {
+            typingVoice.sayCountDown();
             UICountDown.text = count.ToString();
             yield return new WaitForSeconds(1f);
             count--;
@@ -810,6 +811,9 @@ public class TypingSoft : MonoBehaviour
         UIH.text = "";
         UIR.text = "";
         UII.text = "";
+
+        kpm = correctN / totalTime * 60.0f;
+        UIkpm.text = string.Format("{0:0}", kpm);
 
         GameManager.NewKpm = (theme.timer > 0) ? (int)kpm : 0;  // 今回のKPM
         GameManager.KeyParSecond = correctN / totalTime;        // 今回の１秒あたりのキー入力

@@ -34,6 +34,7 @@ public class Confirmation : MonoBehaviour
     private ShopList shopListReset;
     private InventryUI inventoryui;
     private StatusUI statusui;
+    public Setting setting;
 
     private int itemId;
     private int itemPrice;
@@ -68,6 +69,7 @@ public class Confirmation : MonoBehaviour
             int saifu = gm.savedata.Status[0];
             if (saifu >= itemPrice)
             {
+                setting.sayItemGet();
                 pAnimator.SetTrigger("yes");
                 kAnimator.SetTrigger("buy");
                 gm.savedata.Inventory[blankIndex] = itemId;
@@ -84,6 +86,7 @@ public class Confirmation : MonoBehaviour
             }
             else
             {
+                setting.sayLessMoney();
                 pAnimator.SetTrigger("down");
                 kAnimator.SetTrigger("no");
                 talk.text = "シーカーがたりないようです。\nタイピングをしてためてきてください。";
@@ -92,6 +95,7 @@ public class Confirmation : MonoBehaviour
         }
         else
         {
+                setting.sayLessMoney();
             pAnimator.SetTrigger("down");
             kAnimator.SetTrigger("no");
             talk.text = "もちものがいっぱいのようです。";
