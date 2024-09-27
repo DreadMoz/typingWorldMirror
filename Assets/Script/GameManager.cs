@@ -306,6 +306,7 @@ public class GameManager : MonoBehaviour
 
                 if (inventory.activeSelf)   // インベントリ表示中なら
                 {
+                    setting.sayWindowClose();
                     inventoryOpen = -1;         // インベントリ引っ込める
                     checkInventory();
                     rankingOpen = 0;            // ランキングなんもなし
@@ -337,6 +338,7 @@ public class GameManager : MonoBehaviour
 
                 if (ranking.activeSelf)         // ランキング表示中なら
                 {
+                    setting.sayWindowClose();
                     inventoryOpen = 0;              // インベントリなんもなし
                     rankingOpen = -1;               // ランキング引っ込める
                     cameraMove = 2;                 // カメラは引き

@@ -24,6 +24,9 @@ public class Setting : MonoBehaviour
     [SerializeField] private AudioClip windowOpen;
     [SerializeField] private AudioClip itemGet;
     [SerializeField] private AudioClip lessMoney;
+    [SerializeField] private AudioClip kyanseru;
+    [SerializeField] private AudioClip windowClose;
+    [SerializeField] private AudioClip coltu;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +46,7 @@ public class Setting : MonoBehaviour
     {
         if (isWindowShown)
         {
+            sayWindowClose();
             hide();
         }
         else
@@ -136,5 +140,17 @@ public class Setting : MonoBehaviour
     public void sayLessMoney()
     {
         typingAudio.PlayOneShot(lessMoney);
+    }
+    public void sayCancel()
+    {
+        typingAudio.PlayOneShot(kyanseru);
+    }
+    public void sayWindowClose()
+    {
+        typingAudio.PlayOneShot(windowClose);
+    }
+    public void sayColtu()
+    {
+        typingAudio.PlayOneShot(coltu);
     }
 }

@@ -17,6 +17,7 @@ public class TypingVoice : MonoBehaviour
     [SerializeField] private AudioClip coin;
     [SerializeField] private AudioClip coin3;
     [SerializeField] private AudioClip countDown;
+    [SerializeField] private AudioClip coltu;
 
     // Start is called before the first frame update
 
@@ -89,5 +90,8 @@ public class TypingVoice : MonoBehaviour
     {
         typingAudio.PlayOneShot(countDown);
     }
-
+    public void sayColtu()
+    {
+        typingAudio.PlayOneShot(coltu);
+    }
 }

@@ -95,7 +95,7 @@ public class Confirmation : MonoBehaviour
         }
         else
         {
-                setting.sayLessMoney();
+            setting.sayLessMoney();
             pAnimator.SetTrigger("down");
             kAnimator.SetTrigger("no");
             talk.text = "もちものがいっぱいのようです。";
@@ -106,6 +106,7 @@ public class Confirmation : MonoBehaviour
 
     public void selectNo()
     {
+        setting.sayCancel();
         pAnimator.SetTrigger("no");
         kAnimator.SetTrigger("no");
         hide();
@@ -114,6 +115,7 @@ public class Confirmation : MonoBehaviour
 
     public void Cancel()
     {
+        setting.sayCancel();
         pAnimator.SetTrigger("cancel");
         kAnimator.SetTrigger("cancel");
         hide();
