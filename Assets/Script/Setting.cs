@@ -106,6 +106,18 @@ public class Setting : MonoBehaviour
         }
     }
 
+    public void updateVolume()
+    {
+        worldAudio.volume = volumeSlider.value * 0.01f;    // スライダー値をボリュームに
+        if (muteSlider.value == 1)
+        {
+            worldAudio.mute = true;
+        }
+        else
+        {
+            worldAudio.mute = false;
+        }
+    }
     public void initVolume()
     {
         worldAudio.volume = gm.savedata.Settings[se.Volume] * 0.01f;
