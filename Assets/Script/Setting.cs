@@ -176,6 +176,9 @@ public class Setting : MonoBehaviour
     }
     public void sayColtu()
     {
-        worldAudio.PlayOneShot(coltu);
+        if (showFlg)
+        {
+            worldAudio.PlayOneShot(coltu);
+        }
     }
 }
