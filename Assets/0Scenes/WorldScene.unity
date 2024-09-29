@@ -3080,6 +3080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dispText: {fileID: 988626355}
   slider: {fileID: 373241336}
+  setting: {fileID: 575468857}
 --- !u!114 &373241336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3134,18 +3135,6 @@ MonoBehaviour:
       - m_Target: {fileID: 373241335}
         m_TargetAssemblyTypeName: ToggleSetting, Assembly-CSharp
         m_MethodName: ChangeValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 575468857}
-        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
-        m_MethodName: sayColtu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4851,7 +4840,7 @@ MonoBehaviour:
   necoNumSlider: {fileID: 1361174964}
   capitalSlider: {fileID: 373241336}
   toGas: {fileID: 1736834474}
-  typingAudio: {fileID: 598339967}
+  worldAudio: {fileID: 598339967}
   outDoor: {fileID: 8300000, guid: a9d6e250da5ad46cab37e8370071ac4f, type: 3}
   knock: {fileID: 8300000, guid: f0ef2b3678e384285ae7575d51720144, type: 3}
   windowSetting: {fileID: 8300000, guid: 2c0c1616d777a4ac8a42d7e466eb3ebb, type: 3}
@@ -6579,18 +6568,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 575468857}
-        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
-        m_MethodName: sayColtu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &658476160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6605,6 +6582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dispText: {fileID: 636425086}
   slider: {fileID: 658476159}
+  setting: {fileID: 575468857}
 --- !u!1001 &660408384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11614,18 +11592,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 575468857}
-        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
-        m_MethodName: sayColtu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1361174965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11640,6 +11606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dispText: {fileID: 1097688760}
   slider: {fileID: 1361174964}
+  setting: {fileID: 575468857}
 --- !u!1 &1363550088
 GameObject:
   m_ObjectHideFlags: 0
@@ -13789,6 +13756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dispText: {fileID: 1369181682}
   slider: {fileID: 1677659126}
+  setting: {fileID: 0}
 --- !u!114 &1677659126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15277,6 +15245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dispText: {fileID: 1810441725}
   slider: {fileID: 1772734946}
+  setting: {fileID: 575468857}
 --- !u!114 &1772734946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15331,18 +15300,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1772734945}
         m_TargetAssemblyTypeName: ToggleSetting, Assembly-CSharp
         m_MethodName: ChangeValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 575468857}
-        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
-        m_MethodName: sayColtu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15659,9 +15616,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 575468857}
-        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
-        m_MethodName: sayColtu
+      - m_Target: {fileID: 1784894374}
+        m_TargetAssemblyTypeName: SliderVolume, Assembly-CSharp
+        m_MethodName: UpdateVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15685,6 +15642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dispText: {fileID: 543093852}
   slider: {fileID: 1784894372}
+  setting: {fileID: 575468857}
 --- !u!114 &1784894374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15699,6 +15657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1784894372}
   muteSlider: {fileID: 1772734946}
+  typingAudio: {fileID: 598339967}
 --- !u!1 &1790213472
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class Setting : MonoBehaviour
     public Slider capitalSlider;
     public GameObject toGas;
     private bool showFlg = false;
-    public AudioSource typingAudio;  // AudioSource コンポーネントへの参照
+    public AudioSource worldAudio;  // AudioSource コンポーネントへの参照
     [SerializeField] private AudioClip outDoor;
     [SerializeField] private AudioClip knock;
     [SerializeField] private AudioClip windowSetting;
@@ -56,6 +56,23 @@ public class Setting : MonoBehaviour
         }
     }
 
+    public void show()
+    {
+        showFlg = true;
+        volumeSlider.value = gm.savedata.Settings[se.Volume];
+        muteSlider.value = gm.savedata.Settings[se.Mute];
+        necoNumSlider.value = gm.savedata.Settings[se.CatNum];
+        mailCharSlider.value = gm.savedata.Settings[se.MailChar];
+        capitalSlider.value = gm.savedata.Settings[se.Capital];
+
+        // 画面サイズを都度取得しないと途中での最大化などに対応できない
+        float screenWidth = Screen.width;
+        float screenHeight = Screen.height;
+        Debug.Log("Width:" + screenWidth + "  Height:" + screenHeight);
+        transform.position = new Vector2(screenWidth * 0.5f, screenHeight * 0.5f);
+        isWindowShown = true; // 表示に設定
+    }
+    
     public void hide()
     {
         if (showFlg)
@@ -77,80 +94,65 @@ public class Setting : MonoBehaviour
             isWindowShown = false; // 非表示に設定
             gm.exportLocal();
 
-            typingAudio.volume = volumeSlider.value * 0.01f;    // スライダー値をボリュームに
+            worldAudio.volume = volumeSlider.value * 0.01f;    // スライダー値をボリュームに
             if (muteSlider.value == 1)
             {
-                typingAudio.mute = true;
+                worldAudio.mute = true;
             }
             else
             {
-                typingAudio.mute = false;
+                worldAudio.mute = false;
             }
         }
     }
 
-    public void show()
-    {
-        showFlg = true;
-        volumeSlider.value = gm.savedata.Settings[se.Volume];
-        muteSlider.value = gm.savedata.Settings[se.Mute];
-        necoNumSlider.value = gm.savedata.Settings[se.CatNum];
-        mailCharSlider.value = gm.savedata.Settings[se.MailChar];
-        capitalSlider.value = gm.savedata.Settings[se.Capital];
-
-        // 画面サイズを都度取得しないと途中での最大化などに対応できない
-        float screenWidth = Screen.width;
-        float screenHeight = Screen.height;
-        Debug.Log("Width:" + screenWidth + "  Height:" + screenHeight);
-        transform.position = new Vector2(screenWidth * 0.5f, screenHeight * 0.5f);
-        isWindowShown = true; // 表示に設定
-    }
     public void initVolume()
     {
-        typingAudio.volume = gm.savedata.Settings[se.Volume] * 0.01f;    // スライダー値をボリュームに
+        worldAudio.volume = gm.savedata.Settings[se.Volume] * 0.01f;
         if (gm.savedata.Settings[se.Mute] == 1)
         {
-            typingAudio.mute = true;
+            worldAudio.mute = true;
         }
         else
         {
-            typingAudio.mute = false;
+            worldAudio.mute = false;
         }
     }
+
     public void sayOutDoor()
     {
-        typingAudio.PlayOneShot(outDoor);
+        worldAudio.PlayOneShot(outDoor);
     }
     public void sayKnock()
     {
-        typingAudio.PlayOneShot(knock);
+        worldAudio.PlayOneShot(knock);
     }
     public void sayWindowSetting()
     {
-        typingAudio.PlayOneShot(windowSetting);
+        worldAudio.PlayOneShot(windowSetting);
     }
     public void sayWindowOpen()
     {
-        typingAudio.PlayOneShot(windowOpen);
+        worldAudio.PlayOneShot(windowOpen);
     }
     public void sayItemGet()
     {
-        typingAudio.PlayOneShot(itemGet);
+        worldAudio.PlayOneShot(itemGet);
     }
     public void sayLessMoney()
     {
-        typingAudio.PlayOneShot(lessMoney);
+        worldAudio.PlayOneShot(lessMoney);
     }
     public void sayCancel()
     {
-        typingAudio.PlayOneShot(kyanseru);
+        worldAudio.PlayOneShot(kyanseru);
     }
     public void sayWindowClose()
     {
-        typingAudio.PlayOneShot(windowClose);
+        worldAudio.PlayOneShot(windowClose);
     }
     public void sayColtu()
     {
-        typingAudio.PlayOneShot(coltu);
+        worldAudio.PlayOneShot(coltu);
     }
 }

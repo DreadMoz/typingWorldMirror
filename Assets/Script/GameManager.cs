@@ -255,6 +255,7 @@ public class GameManager : MonoBehaviour
         // シーンが3タイピング後の場合
         else if (SceneNo == (int)scene.House)
         {
+            setting.initVolume();
             setting.sayOutDoor();
             rankingWindow.DisplayRankings();    // ランキング更新してから・・・プレイヤーのタイピング更新してから・・・保存したい
             npcManager.SpawnNPCs();
@@ -274,7 +275,6 @@ public class GameManager : MonoBehaviour
                 rankingWindow.SetTo(savedata.Status[st.Rank]);
                 rankingWindow.ScrollTo(savedata.Status[st.Rank]);
             }
-
             MistypedSentences.Clear();  // リストから全ての要素を削除
         }
         // シーンが2タイピングの場合
