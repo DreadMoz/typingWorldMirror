@@ -89,7 +89,7 @@ public class Ranking : MonoBehaviour
             newRankBoard.transform.Find("Kpm").GetComponent<TextMeshProUGUI>().text = rank.Kpm.ToString();
             count++;
         }
-        if ((count == 199) && myBordSet == 0)
+        if ((count == 199) && myBordSet == 0)   // 自分が最下位の場合
         {
                 GameObject myRankBoard = Instantiate(rankBoardMePrefab, rankBoardParent);
 
@@ -98,7 +98,6 @@ public class Ranking : MonoBehaviour
                 myRankBoard.transform.Find("Rank").GetComponent<TextMeshProUGUI>().text = gm.savedata.Status[st.Rank].ToString();
                 myRankBoard.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = gm.savedata.UserName + gm.getNickname(gm.savedata.Equipment[eq.NickName]);
                 myRankBoard.transform.Find("Kpm").GetComponent<TextMeshProUGUI>().text = gm.savedata.Status[st.Kpm].ToString();
-                myBordSet = 1;
                 statusBord.dispStatus();
         }
 //        ScrollTo(gm.savedata.Status[st.Rank]);

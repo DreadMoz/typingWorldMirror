@@ -9067,6 +9067,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1046897614}
     - target: {fileID: 7655380062188190280, guid: 927646cddc3574a4f847689338dc5dea, type: 3}
+      propertyPath: setting
+      value: 
+      objectReference: {fileID: 575468857}
+    - target: {fileID: 7655380062188190280, guid: 927646cddc3574a4f847689338dc5dea, type: 3}
       propertyPath: exitShop
       value: 
       objectReference: {fileID: 483280391}
@@ -12140,6 +12144,7 @@ MonoBehaviour:
   challengeList: {fileID: 405163555}
   customList: {fileID: 308176998}
   listParent: {fileID: 1295912849}
+  setting: {fileID: 575468857}
 --- !u!114 &1463253608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15657,7 +15662,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1784894372}
   muteSlider: {fileID: 1772734946}
-  typingAudio: {fileID: 598339967}
 --- !u!1 &1790213472
 GameObject:
   m_ObjectHideFlags: 0
