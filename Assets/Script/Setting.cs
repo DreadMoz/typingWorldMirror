@@ -108,18 +108,29 @@ public class Setting : MonoBehaviour
 
     public void updateVolume()
     {
-        worldAudio.volume = volumeSlider.value * 0.01f;    // スライダー値をボリュームに
-        if (muteSlider.value == 1)
+        if (showFlg)
         {
-            worldAudio.mute = true;
-        }
-        else
-        {
-            worldAudio.mute = false;
+            gm.savedata.Settings[se.Volume] = (int)volumeSlider.value;
+            gm.savedata.Settings[se.Mute] = (int)muteSlider.value;
+            worldAudio.volume = gm.savedata.Settings[se.Volume] * 0.01f;
+            if (gm.savedata.Settings[se.Mute] == 1)
+            {
+                worldAudio.mute = true;
+            }
+            else
+            {
+                worldAudio.mute = false;
+            }
         }
     }
     public void initVolume()
     {
+        volumeSlider.value = gm.savedata.Settings[se.Volume];
+        muteSlider.value = gm.savedata.Settings[se.Mute];
+        necoNumSlider.value = gm.savedata.Settings[se.CatNum];
+        mailCharSlider.value = gm.savedata.Settings[se.MailChar];
+        capitalSlider.value = gm.savedata.Settings[se.Capital];
+        
         worldAudio.volume = gm.savedata.Settings[se.Volume] * 0.01f;
         if (gm.savedata.Settings[se.Mute] == 1)
         {
