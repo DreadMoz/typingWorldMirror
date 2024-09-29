@@ -15294,7 +15294,6 @@ GameObject:
   - component: {fileID: 1772734944}
   - component: {fileID: 1772734946}
   - component: {fileID: 1772734945}
-  - component: {fileID: 1772734947}
   m_Layer: 5
   m_Name: muteSlider
   m_TagString: Untagged
@@ -15403,9 +15402,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1772734947}
-        m_TargetAssemblyTypeName: MuteSet, Assembly-CSharp
-        m_MethodName: changeMute
+      - m_Target: {fileID: 575468857}
+        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
+        m_MethodName: updateVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15415,19 +15414,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1772734947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772734943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13a802f5a441482aaeab31a9a40704d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 575468857}
 --- !u!1001 &1777333111
 PrefabInstance:
   m_ObjectHideFlags: 0
