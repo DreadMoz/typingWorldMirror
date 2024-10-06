@@ -4107,6 +4107,7 @@ MonoBehaviour:
   menuMedal: {fileID: 306187912}
   menuItem: {fileID: 2124995843}
   collectionItem: {fileID: 2124995846}
+  setting: {fileID: 575468857}
 --- !u!224 &399325476 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2978664703979975087, guid: 3b2994aac42244707b0b3a44268247f5, type: 3}

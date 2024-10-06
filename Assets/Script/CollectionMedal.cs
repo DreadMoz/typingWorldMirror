@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectionMedal : MonoBehaviour
@@ -22,6 +20,8 @@ public class CollectionMedal : MonoBehaviour
     private GameObject menuItem;
     [SerializeField]
     private CollectionItem collectionItem;
+    [SerializeField]
+    private Setting setting;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +36,7 @@ public class CollectionMedal : MonoBehaviour
 
     public void show(int windowNo)
     {
+        setting.sayWindowSetting();
         if (windowNo == 1)
         {
             backMedal.SetActive(true);
@@ -69,6 +70,7 @@ public class CollectionMedal : MonoBehaviour
         {
             return;
         }
+        setting.sayWindowClose();
         // 画面サイズを都度取得しないと途中での最大化などに対応できない
         float screenWidth = Screen.width;
         float screenHeight = Screen.height;
