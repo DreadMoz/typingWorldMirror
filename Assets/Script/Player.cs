@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject inventoryButton;
     [SerializeField] private GameObject rankingButton;
     [SerializeField] private GameObject settingButton;
+    [SerializeField] private GameObject collectionMedalButton;
+    [SerializeField] private GameObject collectionItemButton;
     [SerializeField] private GameObject itemShop;
     [SerializeField] private ShopList shopList;
     [SerializeField] private TypingRoom typingList;
@@ -137,6 +139,8 @@ public class Player : MonoBehaviour
             settingButton.SetActive(false);
             rankingButton.SetActive(false);
             inventoryButton.SetActive(false);
+            collectionMedalButton.SetActive(false);
+            collectionItemButton.SetActive(false);
             rankingButton.GetComponent<OpenButton>().forceOpen();
             fadeDoor.StartFadeIn();
             exitShop.SetActive(false);
@@ -167,6 +171,8 @@ public class Player : MonoBehaviour
             settingButton.SetActive(true);
             rankingButton.SetActive(true);
             inventoryButton.SetActive(true);
+            collectionMedalButton.SetActive(true);
+            collectionItemButton.SetActive(true);
             rankingButton.GetComponent<OpenButton>().OnButton();
             fadeDoor.StartFadeIn();
             exitShop.SetActive(false);
@@ -200,6 +206,8 @@ public class Player : MonoBehaviour
             rankingButton.SetActive(false);
             settingButton.SetActive(false);
             inventoryButton.SetActive(false);
+            collectionMedalButton.SetActive(false);
+            collectionItemButton.SetActive(false);
             inventoryButton.GetComponent<OpenButton>().forceOpen();
             fadeDoor.StartFadeIn();
             exitShop.SetActive(true);
@@ -226,6 +234,8 @@ public class Player : MonoBehaviour
             settingButton.SetActive(true);
             rankingButton.SetActive(true);
             inventoryButton.SetActive(true);
+            collectionMedalButton.SetActive(true);
+            collectionItemButton.SetActive(true);
             inventoryButton.GetComponent<OpenButton>().OnButton();
             fadeDoor.StartFadeIn();
             exitShop.SetActive(false);

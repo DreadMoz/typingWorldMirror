@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
     public GameObject inventoryButton;  // インベントリボタン
     public GameObject rankingButton;    // ランキングボタン
     public GameObject settingButton;    // セッティングボタン
+    public GameObject collectionMedalButton;
+    public GameObject collectionItemButton;
 
     public Toggle exToggle;
     public Toggle gssToggle;
@@ -199,6 +201,8 @@ public class GameManager : MonoBehaviour
                 settingButton.SetActive(false);
                 rankingButton.SetActive(false);
                 inventoryButton.SetActive(false);
+                collectionMedalButton.SetActive(false);
+                collectionItemButton.SetActive(false);
                 status.SetActive(true);
                 ranking.SetActive(true);
 

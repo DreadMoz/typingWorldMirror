@@ -58,6 +58,7 @@ public class ShopList : MonoBehaviour
     {
         kAnimator.SetTrigger("tab");
         scrollRect.verticalNormalizedPosition = 1.0f;
+        tabNo = 0;
         ShowItemList(0);
     }
 
