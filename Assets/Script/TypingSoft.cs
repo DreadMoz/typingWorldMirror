@@ -480,11 +480,11 @@ public class TypingSoft : MonoBehaviour
         {
             return;
         }
-        if (comboN % 20 == 0)
+        if (comboN % 25 == 0)
         {
-            if (comboN == 20)
+            if (comboN == 25)
             {
-                return;     // 最初は40スタート
+                return;     // 最初は50スタート
             }
             seekerCombo++;
             coins.SpawnCoins(1, 1);    // コインアニメーション
@@ -505,8 +505,8 @@ public class TypingSoft : MonoBehaviour
         {
             if (shuffledThemes[currentThemeIndex-1].id == mailReplaceNo + 1)
             {
-                seekerBonus += 8;
-                coins.SpawnCoins(8, 0);    // コインアニメーション
+                seekerBonus += 5;
+                coins.SpawnCoins(5, 0);    // コインアニメーション
                 typingVoice.sayCoin3();
                 updateSeeker();
             }
@@ -975,10 +975,15 @@ public class TypingSoft : MonoBehaviour
             coins.SpawnCoins(20, 0);
             coins.SpawnCoins(8, 1);
             coins.SpawnCoins(8, 2);
+        } else if (diceNo == 5) {
+            seekerBonus += 20;
             typingVoice.sayCoin3();
+            coins.SpawnCoins(14, 0);
+            coins.SpawnCoins(3, 1);
+            coins.SpawnCoins(3, 2);
         } else {
-            seekerBonus += (int)(diceNo * 3)+6;
-            coins.SpawnCoins((int)(diceNo * 3)+6, 0);
+            seekerBonus += (int)(diceNo * 2)+6;
+            coins.SpawnCoins((int)(diceNo * 2)+6, 0);
         }
         typingVoice.sayCoin3();
         updateSeeker();

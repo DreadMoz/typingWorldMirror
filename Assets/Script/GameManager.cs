@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public DataBase db;
     public SaveData savedata;
     public Connection connection;
+    public static int openHour = 0;            // 開店時間
+    public static int closeHour = 23;          // 閉店時間
 
 
     static public int SceneNo { get; set; }
@@ -38,8 +40,6 @@ public class GameManager : MonoBehaviour
     static public int MaxCombo { get; set; }
     public static List<string> MistypedSentences { get; set; } = new List<string>();
     public static string geminiResponce { get; set; }
-    public static int openHour = 0;            // 開店時間
-    public static int closeHour = 23;          // 閉店時間
 
     [SerializeField] private float kpmRatio = 0.8f;
     [SerializeField] private Setting setting;

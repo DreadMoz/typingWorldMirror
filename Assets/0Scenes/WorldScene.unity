@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5176471, g: 0.5647059, b: 0.6431373, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.007
@@ -301,6 +301,7 @@ MonoBehaviour:
   hitBackForce: 1.6
   keepOut: {fileID: 193730333}
   setting: {fileID: 575468857}
+  collection: {fileID: 398753013}
   rankingWindow: {fileID: 0}
   playerCamera: {fileID: 0}
 --- !u!195 &11456803
@@ -2377,7 +2378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6339, g: 0.68015754, b: 0.7264151, a: 1}
+  m_Color: {r: 0.6580189, g: 0.7645553, b: 0.8773585, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

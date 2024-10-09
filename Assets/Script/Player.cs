@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float hitBackForce = 0.3f;
     [SerializeField] private GameObject keepOut;
     [SerializeField] private Setting setting;
+    [SerializeField] private CollectionMedal collection;
     public Ranking rankingWindow;
 
     private Animator pAnimator;
@@ -134,6 +135,7 @@ public class Player : MonoBehaviour
             typingWindow = 0;
 
             setting.hide();
+            collection.hide();
             tiikawa.SetActive(true);
             typingRoom.SetActive(true);
             settingButton.SetActive(false);
@@ -202,6 +204,7 @@ public class Player : MonoBehaviour
             shopWindow = 0;
 
             setting.hide();
+            collection.hide();
             itemShop.SetActive(true);
             rankingButton.SetActive(false);
             settingButton.SetActive(false);
