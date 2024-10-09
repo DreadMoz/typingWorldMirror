@@ -480,9 +480,9 @@ public class TypingSoft : MonoBehaviour
         {
             return;
         }
-        if (comboN % 20 == 0)
+        if (comboN % 25 == 0)
         {
-            if (comboN == 20)
+            if (comboN == 25)
             {
                 return;     // 最初は50スタート
             }
