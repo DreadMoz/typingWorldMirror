@@ -28923,11 +28923,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5929332998558211796, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_Height
-      value: 1.8
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 5929332998558211796, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_Center.y
-      value: 1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 6145207650892521003, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_IsActive
