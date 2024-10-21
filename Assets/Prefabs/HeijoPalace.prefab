@@ -573,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6356743201128919071, guid: f80e58617d36b1d4984c0a472ee980d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.55999756
+      value: 0.74399567
       objectReference: {fileID: 0}
     - target: {fileID: 6356743201128919071, guid: f80e58617d36b1d4984c0a472ee980d9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1043,6 +1043,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuzakuGate
       objectReference: {fileID: 0}
+    - target: {fileID: 4588873859515892279, guid: 825cf98ce04bc4243a69834a4b3debdc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124485093311484705, guid: 825cf98ce04bc4243a69834a4b3debdc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 825cf98ce04bc4243a69834a4b3debdc, type: 3}
 --- !u!4 &611433763645876815 stripped
@@ -1173,7 +1181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6356743201128919071, guid: f80e58617d36b1d4984c0a472ee980d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.55599976
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 6356743201128919071, guid: f80e58617d36b1d4984c0a472ee980d9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2024,7 +2032,7 @@ PrefabInstance:
     - target: {fileID: 7070822614993085465, guid: 725096b20ab318f4b816c6809d4a7e0a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ea902fd3157746d44ab95860391cf0c9, type: 2}
+      objectReference: {fileID: 2100000, guid: d2a665f67cf70334e91e8596f23f8947, type: 2}
     - target: {fileID: 8244885200948551542, guid: 725096b20ab318f4b816c6809d4a7e0a, type: 3}
       propertyPath: m_RootOrder
       value: 7
