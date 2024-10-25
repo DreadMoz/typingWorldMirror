@@ -31,7 +31,7 @@ public class InventryUI : MonoBehaviour
         {
             slots = slotsParent.GetComponentsInChildren<InventrySlot>();
             int[] saveItem = gm.savedata.Inventory;
-
+            
             for (int i = 0; i < saveItem.Length; i++)
             {
                 if (i < slots.Length)
@@ -42,7 +42,7 @@ public class InventryUI : MonoBehaviour
                         if (CheckItemExists(saveItem[i]))
                         {
                             // 同じアイテム番号が来たら0にする
-                            slots[i].SetItem(null);  // または slots[i].ClearItem();
+                            slots[i].SetItem(null);
                             gm.savedata.Inventory[i] = 0;
                         }
                         else
@@ -54,6 +54,8 @@ public class InventryUI : MonoBehaviour
                     else
                     {
                         Debug.LogError("不正なインデックス: " + saveItem[i]);
+                        slots[i].SetItem(null);
+                        gm.savedata.Inventory[i] = 0;
                     }
                 }
                 else
@@ -74,6 +76,13 @@ public class InventryUI : MonoBehaviour
         foreach (InventrySlot slot in slots)
         {
             if (slot.MyItem != null && slot.MyItem.MyItemNo == itemNo)
+            {
+                return true;
+            }
+        }
+        foreach (int equip in gm.savedata.Equipment)
+        {
+            if (equip == itemNo)
             {
                 return true;
             }
