@@ -38,7 +38,18 @@ public class InventryUI : MonoBehaviour
                 {
                     if (saveItem[i] < gm.db.GetItemList().Count)
                     {
-                        slots[i].SetItem(gm.db.GetItemList()[saveItem[i]]);
+                        // 同じアイテム番号のアイテムがすでに存在するかチェック
+                        if (CheckItemExists(saveItem[i]))
+                        {
+                            // 同じアイテム番号が来たら0にする
+                            slots[i].SetItem(null);  // または slots[i].ClearItem();
+                            gm.savedata.Inventory[i] = 0;
+                        }
+                        else
+                        {
+                            // 初めてのアイテムの場合、アイテムを設定
+                            slots[i].SetItem(gm.db.GetItemList()[saveItem[i]]);
+                        }
                     }
                     else
                     {
@@ -55,6 +66,19 @@ public class InventryUI : MonoBehaviour
         {
             Debug.LogError("setAllItemsでエラーが発生しました: " + ex.Message);
         }
+    }
+
+    // 同じアイテム番号のアイテムが存在するかチェックする関数
+    private bool CheckItemExists(int itemNo)
+    {
+        foreach (InventrySlot slot in slots)
+        {
+            if (slot.MyItem != null && slot.MyItem.MyItemNo == itemNo)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void turnImage(int no)

@@ -196,6 +196,7 @@ MonoBehaviour:
   enetToggle: {fileID: 0}
   gmailToggle: {fileID: 0}
   statusui: {fileID: 1979795457}
+  dragging: 0
   windowOpenCount: 20
   talk: {fileID: 1732579529}
 --- !u!114 &1403481
@@ -620,6 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29724431df57ae45b752b45a268b5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!114 &35398405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,6 +2739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29724431df57ae45b752b45a268b5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!114 &198227627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9660,6 +9663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29724431df57ae45b752b45a268b5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &679409344
 GameObject:
   m_ObjectHideFlags: 0
@@ -10459,6 +10463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29724431df57ae45b752b45a268b5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1 &708370598
 GameObject:
   m_ObjectHideFlags: 0
@@ -14058,6 +14063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29724431df57ae45b752b45a268b5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!114 &1015212046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21114,6 +21120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29724431df57ae45b752b45a268b5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!114 &1670531288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23716,6 +23723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29724431df57ae45b752b45a268b5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!114 &1803103671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31150,6 +31158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29724431df57ae45b752b45a268b5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!114 &1967106012
 MonoBehaviour:
   m_ObjectHideFlags: 0
