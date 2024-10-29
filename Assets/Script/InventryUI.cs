@@ -17,6 +17,7 @@ public class InventryUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        setInventoryFromItems();    // インベントリにないアイテムがあったら補正
         setAllItems();
     }
     
@@ -25,35 +26,72 @@ public class InventryUI : MonoBehaviour
     {
     }
 
+    private void setInventoryFromItems()
+    {
+        for (int i = 0; i < gm.savedata.Items.Length; i++)
+        {
+            if (gm.savedata.Items[i] == true)
+            {
+                setItemBlank(i);
+            }
+        }
+    }
+    private void setItemBlank(int no)
+    {
+        for (int i = 0; i < gm.savedata.Inventory.Length; i++)
+        {
+            if (gm.savedata.Inventory[i] == no) // 同じアイテム番号のアイテムがインベントリに存在するかチェック
+            {
+                return;
+            }
+        }
+        for (int i = 0; i < gm.savedata.Equipment.Length; i++)
+        {
+            if (gm.savedata.Equipment[i] == no) // 同じアイテム番号のアイテムが装備に存在するかチェック
+            {
+                return;
+            }
+        }
+        for (int i = 0; i < gm.savedata.Inventory.Length; i++)
+        {
+            if (gm.savedata.Inventory[i] == 0)  // インベントリの空きがあれば
+            {
+                gm.savedata.Inventory[i] = no;  //　アイテム番号を代入
+                return;
+            }
+        }
+    }
+
     public void setAllItems()
     {
         try
         {
             slots = slotsParent.GetComponentsInChildren<InventrySlot>();
+            foreach (InventrySlot slot in slots)
+            {
+                slot.SetItem(null);
+            }
             int[] saveItem = gm.savedata.Inventory;
-            
+
             for (int i = 0; i < saveItem.Length; i++)
             {
                 if (i < slots.Length)
                 {
                     if (saveItem[i] < gm.db.GetItemList().Count)
                     {
-                        // 同じアイテム番号のアイテムがすでに存在するかチェック
-                        if (CheckItemExists(saveItem[i]))
+                        if (CheckItemExists(saveItem[i]))   // 同じアイテム番号のアイテムがすでに存在するかチェック
                         {
-                            // 同じアイテム番号が来たら0にする
-                            slots[i].SetItem(null);
+                            slots[i].SetItem(null);         // 同じアイテム番号が来たら0にする
                             gm.savedata.Inventory[i] = 0;
                         }
                         else
                         {
-                            // 初めてのアイテムの場合、アイテムを設定
-                            slots[i].SetItem(gm.db.GetItemList()[saveItem[i]]);
+                            slots[i].SetItem(gm.db.GetItemList()[saveItem[i]]);   // 初めてのアイテムの場合、アイテムを設定
                         }
                     }
                     else
                     {
-                        Debug.LogError("不正なインデックス: " + saveItem[i]);
+                        Debug.LogError("不正なアイテム番号: " + saveItem[i]);
                         slots[i].SetItem(null);
                         gm.savedata.Inventory[i] = 0;
                     }
@@ -73,14 +111,14 @@ public class InventryUI : MonoBehaviour
     // 同じアイテム番号のアイテムが存在するかチェックする関数
     private bool CheckItemExists(int itemNo)
     {
-        foreach (InventrySlot slot in slots)
+        foreach (InventrySlot slot in slots)        // インベントリは複数あるかチェックする
         {
             if (slot.MyItem != null && slot.MyItem.MyItemNo == itemNo)
             {
                 return true;
             }
         }
-        foreach (int equip in gm.savedata.Equipment)
+        foreach (int equip in gm.savedata.Equipment)    // 装備側はシンプルにあるかないか見る
         {
             if (equip == itemNo)
             {
