@@ -197,6 +197,7 @@ public class TypingSoft : MonoBehaviour
     [SerializeField] private Text resultCombo;
     // 結果Kpm
     [SerializeField] private Text resultKpm;
+    private GameObject panelMessage;
 
     [Serializable]
     public class Theme
@@ -252,6 +253,7 @@ public class TypingSoft : MonoBehaviour
             resultTitle = transform.Find("ResultPanel/TitleText").GetComponent<Text>();
             resultCombo = transform.Find("ResultPanel/maxComboText").GetComponent<Text>();
             resultKpm = transform.Find("EventPanel/totalKpmText").GetComponent<Text>();
+            panelMessage = transform.Find("EventPanel/Message").gameObject;
         }
         else
         {
@@ -876,16 +878,6 @@ public class TypingSoft : MonoBehaviour
         UIR.text = "";
         UII.text = "";
 
-        if (GameManager.guestMode)
-        {
-            int itemId = 241;
-            int blankIndex = gm.savedata.getBlankInventoryIndex();
-            gm.savedata.Inventory[blankIndex] = itemId;
-            gm.savedata.Items[itemId] = true;
-
-            gm.exportLocal();
-        }
-
         getKeyComboBonus();
 
         kpm = correctN / totalTime * 60.0f;
@@ -915,6 +907,24 @@ public class TypingSoft : MonoBehaviour
         rHand.SetActive(false);
 
         gm.setGemini();
+
+        if (GameManager.guestMode)
+        {
+            int itemId = 241;
+            int blankIndex = gm.savedata.getBlankInventoryIndex();
+            gm.savedata.Inventory[blankIndex] = itemId;
+            gm.savedata.Items[itemId] = true;
+
+            if (GameManager.eventHeijo)
+            {
+                panelMessage.SetActive(true);
+                gm.exportLocal();
+            }
+            else
+            {
+                panelMessage.SetActive(false);
+            }
+        }
 
         gm.savedata.Settings[se.GachaCnt] ++;
         hopDiamond(gm.savedata.Settings[se.GachaCnt]);

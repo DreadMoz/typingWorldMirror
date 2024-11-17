@@ -133,6 +133,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1806104360574487705}
     - target: {fileID: 4339597665872128102, guid: 34576a42aa09d47c3af0ad1ee38c4a45, type: 3}
+      propertyPath: eTreeL
+      value: 
+      objectReference: {fileID: 5973374071357632689}
+    - target: {fileID: 4339597665872128102, guid: 34576a42aa09d47c3af0ad1ee38c4a45, type: 3}
+      propertyPath: eTreeR
+      value: 
+      objectReference: {fileID: 284014582716462850}
+    - target: {fileID: 4339597665872128102, guid: 34576a42aa09d47c3af0ad1ee38c4a45, type: 3}
       propertyPath: eraserL
       value: 
       objectReference: {fileID: 7328812028057088098}
@@ -220,6 +228,14 @@ PrefabInstance:
       propertyPath: duckPondR
       value: 
       objectReference: {fileID: 3231238133544848510}
+    - target: {fileID: 4339597665872128102, guid: 34576a42aa09d47c3af0ad1ee38c4a45, type: 3}
+      propertyPath: eSnowManL
+      value: 
+      objectReference: {fileID: 5227608959435394332}
+    - target: {fileID: 4339597665872128102, guid: 34576a42aa09d47c3af0ad1ee38c4a45, type: 3}
+      propertyPath: eSnowManR
+      value: 
+      objectReference: {fileID: 7261924098939810770}
     - target: {fileID: 4339597665872128102, guid: 34576a42aa09d47c3af0ad1ee38c4a45, type: 3}
       propertyPath: grassARed
       value: 
@@ -823,6 +839,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4581179541081322464, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
   m_PrefabInstance: {fileID: 4403573054387578229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &284014582716462850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4534464699975635575, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
+  m_PrefabInstance: {fileID: 4403573054387578229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &290934769764938747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4113257593829774990, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
@@ -1263,6 +1284,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8850051097803572053, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
   m_PrefabInstance: {fileID: 4403573054387578229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5227608959435394332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8471430304287631465, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
+  m_PrefabInstance: {fileID: 4403573054387578229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5238867433114309583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8478185112882968250, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
@@ -1311,6 +1337,11 @@ GameObject:
 --- !u!4 &5960742580189595689 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8044675330654334300, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
+  m_PrefabInstance: {fileID: 4403573054387578229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5973374071357632689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8068500331220964804, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
   m_PrefabInstance: {fileID: 4403573054387578229}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5997739940583053481 stripped
@@ -1446,6 +1477,11 @@ GameObject:
 --- !u!4 &7253829801014611498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6464466023610231647, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
+  m_PrefabInstance: {fileID: 4403573054387578229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7261924098939810770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6474816317498529447, guid: e87c91871d1834b7b837cc4a40772402, type: 3}
   m_PrefabInstance: {fileID: 4403573054387578229}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7264453018097705908 stripped

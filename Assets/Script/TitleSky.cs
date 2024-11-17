@@ -478,4 +478,10 @@ public class TitleSky : MonoBehaviour
             firstPush = true;
         }
     }
+
+    public void onHeijoMode()
+    {
+        GameManager.eventHeijo = true;
+        onGuestMode();
+    }
 }
