@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.5176471, g: 0.5647059, b: 0.6431373, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.007
@@ -11824,7 +11824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1420090234076632232, guid: ae92324ee1a594c09a679e0584c01f90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.71
+      value: 11.07
       objectReference: {fileID: 0}
     - target: {fileID: 1420090234076632232, guid: ae92324ee1a594c09a679e0584c01f90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12125,6 +12125,22 @@ PrefabInstance:
     - target: {fileID: 4909404180622403646, guid: ae92324ee1a594c09a679e0584c01f90, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915545556020499857, guid: ae92324ee1a594c09a679e0584c01f90, type: 3}
+      propertyPath: m_Size.x
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915545556020499857, guid: ae92324ee1a594c09a679e0584c01f90, type: 3}
+      propertyPath: m_Size.z
+      value: 34.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915545556020499857, guid: ae92324ee1a594c09a679e0584c01f90, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915545556020499857, guid: ae92324ee1a594c09a679e0584c01f90, type: 3}
+      propertyPath: m_Center.z
+      value: 58.4
       objectReference: {fileID: 0}
     - target: {fileID: 4945485444871746002, guid: ae92324ee1a594c09a679e0584c01f90, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -29744,15 +29760,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7700812938084356392, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 286.1
+      value: 285.3
       objectReference: {fileID: 0}
     - target: {fileID: 7700812938084356392, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 0.92
       objectReference: {fileID: 0}
     - target: {fileID: 7700812938084356392, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 96.6
+      value: 100.2
       objectReference: {fileID: 0}
     - target: {fileID: 7700812938084356392, guid: 93f91d3dd290c9d4e8d30dfa31201048, type: 3}
       propertyPath: m_LocalRotation.w
