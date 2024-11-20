@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.10437907, g: 0.15728384, b: 0.27811205, a: 1}
+  m_IndirectSpecularColor: {r: 0.113148004, g: 0.17154644, b: 0.3040652, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4056,7 +4056,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 992936578}
         m_TargetAssemblyTypeName: TitleSky, Assembly-CSharp
-        m_MethodName: onGuestMode
+        m_MethodName: onHeijoMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
