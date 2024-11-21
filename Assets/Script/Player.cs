@@ -443,6 +443,7 @@ public class Player : MonoBehaviour
         }
         else if (col.gameObject.name == "kanbanCube")
         {
+            /*
             if (!goNextScene)
             {
                 GameManager.eventHeijo = true;
@@ -451,6 +452,7 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene("typingStage"); // タイピングシーンに遷移
                 goNextScene = true;
             }
+            */
         }
         else if (col.gameObject.name != "Terrain")
         {
@@ -458,9 +460,6 @@ public class Player : MonoBehaviour
             animator.SetTrigger("Damage");
             agent.destination = this.transform.position;
         }
-        
-
-        
     }
 
     void OnCollisionStay(Collision col)
