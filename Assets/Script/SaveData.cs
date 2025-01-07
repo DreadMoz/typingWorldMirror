@@ -51,7 +51,7 @@ public class se
     public const int Mute = 4;
     public const int LastLogin = 5;
     public const int Capital = 6;
-    public const int dummy7 = 7;
+    public const int KeyType = 7;
     public const int dummy8 = 8;
     public const int dummy9 = 9;
 }
@@ -300,6 +300,8 @@ public class SaveData : ScriptableObject
 
         DateTime today = DateTime.Now;
         Settings[se.LastLogin] = today.Year * 10000 + today.Month * 100 + today.Day;
+        Settings[se.Capital] = 0;
+        Settings[se.KeyType] = 1;
     }
 
     // 拡張機能からステータスデータを取得する。

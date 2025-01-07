@@ -112,6 +112,7 @@ public class TitleSky : MonoBehaviour
         if (GameManager.SceneNo == scene.Night)
         {
             startButton.SetActive(false);
+            guestButton.SetActive(false);
 
             message.SetActive(true);
             Text messageText = message.GetComponentInChildren<Text>();

@@ -1201,6 +1201,7 @@ public class TypingSoft : MonoBehaviour
     {
 //        Debug.Log("key: " + key);
 
+        int keyType = gm.savedata.Settings[se.Capital];
         switch (key)
         {
             // かな入力用に便宜的にタブ文字を Shift+0 に割り当てている
@@ -1283,9 +1284,13 @@ public class TypingSoft : MonoBehaviour
             case KeyCode.BackQuote:
                 return isShiftkeyPushed ? "`" : "@";
             case KeyCode.LeftBracket:
-                return isShiftkeyPushed ? "`" : "@";
-//            case KeyCode.LeftBracket:
-//                return isShiftkeyPushed ? "{" : "[";
+                if (keyType == 1) {
+                    return isShiftkeyPushed ? "`" : "@";
+                } else if (keyType == 2) {
+                    return isShiftkeyPushed ? "{" : "[";
+                } else {
+                    return isShiftkeyPushed ? "{" : "[";
+                }
             case KeyCode.RightBracket:
                 return isShiftkeyPushed ? "}" : "]";
             case KeyCode.Equals:
