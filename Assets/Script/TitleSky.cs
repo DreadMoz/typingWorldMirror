@@ -155,27 +155,27 @@ public class TitleSky : MonoBehaviour
     public void StartButton()
     {
 //        gm.savedata.testEncodeMedals();   // Medalデバッグ
-        if (loginFlg == 0)
+        if (loginFlg == 0)  // 初回ログイン時
         {
             startButton.SetActive(false);   // ログイン完了まで一旦消す
             guestButton.SetActive(false);   // ログイン完了まで一旦消す
-            gm.connection.enetLogin();    // OAuthログイン。
+            gm.connection.enetLogin();    // OAuthログインHTMLへ
         }
-        else if (loginFlg == 1)
+        else if (loginFlg == 1) // ２回目以降のログイン時
         {
             if (!firstPush)
             {
-                fade.StartFadeOut();
+                fade.StartFadeOut();    // ワールドシーンへのフェードアウト
                 firstPush = true;
             }
         }
-        else if (loginFlg == 2)
+        else if (loginFlg == 2) // 初回「つくる」時
         {
-            selectNeco();
+            selectNeco();   // ねこ選び
         }
-
     }
 
+    // gm.connection.enetLogin() OAuthログインの後HTMLから(GAS管理者権限でアカウント情報取得後)
     public void finishOAuth(string jsonUserInfo)
     {
         userData.SetActive(true);
@@ -190,16 +190,15 @@ public class TitleSky : MonoBehaviour
         StartCoroutine(LoadImage(userInfo.picture));
         messageText.text = userInfo.message;
 
-        gm.savedata.updateLastName(userInfo.lastName);
-        gm.exportLocal();  // lastName更新データ保存ローカル＆GSS
 
         if (userInfo.access == "true")  // いいネットなら照合成功
         {
-            gm.connection.loadLocal(); // ローカルデータをロードする
+            gm.connection.loadLocal(); // ローカルデータをロードする 自動でHTMLとのやり取りが続く
         }
         reLogin.SetActive(true); // ログアウトボタン表示
     }
 
+    // localStrageからデータの読み込みに成功した時呼ばれる
     public void finishDataLoadExtStatus(string statusDataJson)
     {
         message.SetActive(true);
@@ -249,7 +248,7 @@ public class TitleSky : MonoBehaviour
     {
         Text messageText = message.GetComponentInChildren<Text>();
 
-        if (gm.savedata.Equipment[eq.CatBody] == 0)        // ねこボディなし
+        if (gm.savedata.Equipment[eq.CatBody] == 0)        // ねこボディあるかないかでlocalStrageの正当性を判定
         {
             Debug.Log("ネコボディなしGASアクセスへ");
             messageText.text += "クラウドにデータがあるかさがしてきます・・・";
@@ -258,6 +257,11 @@ public class TitleSky : MonoBehaviour
         }
         else
         {
+            if (lastName.text != gm.savedata.LastName) {    // ラストネームが更新されていたら
+                gm.savedata.updateLastName(lastName.text);  // メモリのラストネーム更新
+                string saveLocalJson = gm.savedata.CompileGameDataForLocal(gm.savedata);    // localStrage保存用データ作成
+                gm.connection.saveLocal(saveLocalJson);     // localStrage更新
+            }
             Debug.Log("拡張機能正常データあり");
             messageText.text += "ほぞんデータがみつかったよ。スタートしましょう。";
             showStart();
