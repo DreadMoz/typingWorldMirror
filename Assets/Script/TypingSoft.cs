@@ -14,6 +14,7 @@ using UnityEngine.Networking;
 using TMPro;
 using Shapes2D;
 using System.Linq;
+using System.Diagnostics.Tracing;
 
 public class TypingSoft : MonoBehaviour
 {
@@ -1199,8 +1200,10 @@ public class TypingSoft : MonoBehaviour
     /// </summary>
     private string ConvertKeyCodeToStr(KeyCode key, bool isShiftkeyPushed)
     {
-        Debug.Log("key: " + key);
-
+        if (key != 0) {     // デバッグ用
+            Debug.Log("key: " + key);
+            END.text = "key: " + key;
+        }
         int keyType = gm.savedata.Settings[se.Capital];
         switch (key)
         {
