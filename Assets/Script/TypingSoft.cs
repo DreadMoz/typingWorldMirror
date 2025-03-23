@@ -1199,7 +1199,7 @@ public class TypingSoft : MonoBehaviour
     /// </summary>
     private string ConvertKeyCodeToStr(KeyCode key, bool isShiftkeyPushed)
     {
-//        Debug.Log("key: " + key);
+        Debug.Log("key: " + key);
 
         int keyType = gm.savedata.Settings[se.Capital];
         switch (key)
